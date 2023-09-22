@@ -1,0 +1,80 @@
+body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0px;
+  padding: 2vw;
+}
+
+#controller {
+  margin-bottom: 2rem;
+}
+
+#calendar {
+  width: 100%;
+  min-width: 30rem;
+  max-width: 48rem;
+  height: 100%;
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  border: 1px solid lightgray;
+  border-radius: 4px;
+  background-color: white;
+}
+
+#calendar > div {
+  height: 7rem;
+  padding: 12px;
+  border: 1px solid #d0ffd7;
+  border-radius: 4px;
+  border-collapse: collapse;
+  font-size: 1.1rem;
+  font-weight: bold;
+  color: gray;
+  background-color: #f3fef1;
+}
+#calendar > div.focus {
+  color: black;
+  background-color: #d8ffd2;
+}
+#calendar > div:hover {
+  cursor: pointer;
+  background-color: #d8ffd2;
+}
+
+#calendar > div.red {
+  border: 1px solid #ffd0d0;
+  color: red;
+  background-color: #fef1f1;
+}
+#calendar > div.red.focus {
+  background-color: #ffc8c8;
+}
+#calendar > div.red:hover {
+  background-color: #ffc8c8;
+}
+
+#calendar > div.blue {
+  border: 1px solid #d0d2ff;
+  color: blue;
+  background-color: #f1f2fe;
+}
+#calendar > div.blue.focus {
+  background-color: #c5caff;
+}
+#calendar > div.blue:hover {
+  background-color: #c5caff;
+}
+
+#calendar > div:empty {
+  border: 1px solid lightgray;
+  color: white;
+  cursor: default;
+  background-color: #f9f9f9;
+}
+#calendar > div:empty:not(:first-child):not(.after-end) {
+  border-left-width: 0px;
+}
+#calendar > div:empty:not(:last-child):not(.before-start) {
+  border-right-width: 0px;
+}
